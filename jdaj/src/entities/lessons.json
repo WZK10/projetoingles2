@@ -1,0 +1,113 @@
+
+{
+  "name": "lessons",
+  "fields": [
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "title": "Lesson Title"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": true,
+      "title": "Description"
+    },
+    {
+      "name": "level",
+      "type": "string",
+      "required": true,
+      "title": "Difficulty Level",
+      "enum": ["beginner", "intermediate", "advanced"]
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "required": true,
+      "title": "Category",
+      "enum": ["grammar", "vocabulary", "conversation", "listening", "reading", "writing"]
+    },
+    {
+      "name": "content",
+      "type": "object",
+      "required": true,
+      "title": "Lesson Content",
+      "properties": {
+        "text": {
+          "type": "string",
+          "title": "Lesson Text"
+        },
+        "audioUrl": {
+          "type": "string",
+          "title": "Audio URL"
+        },
+        "videoUrl": {
+          "type": "string",
+          "title": "Video URL"
+        }
+      }
+    },
+    {
+      "name": "exercises",
+      "type": "array",
+      "required": true,
+      "title": "Exercises",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "title": "Question"
+          },
+          "options": {
+            "type": "array",
+            "title": "Answer Options",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correctAnswer": {
+            "type": "string",
+            "title": "Correct Answer"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          }
+        }
+      }
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": true,
+      "title": "Duration (minutes)"
+    },
+    {
+      "name": "requiredSubscription",
+      "type": "string",
+      "required": true,
+      "title": "Required Subscription",
+      "enum": ["free", "basic", "premium", "pro"]
+    },
+    {
+      "name": "creator",
+      "type": "string",
+      "required": true,
+      "title": "Creator ID"
+    },
+    {
+      "name": "createdAt",
+      "type": "string",
+      "required": true,
+      "title": "datetime"
+    },
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "required": true,
+      "title": "datetime"
+    }
+  ]
+}

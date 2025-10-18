@@ -1,0 +1,67 @@
+
+{
+  "name": "user_progress",
+  "fields": [
+    {
+      "name": "user_id",
+      "type": "string",
+      "required": true,
+      "title": "User ID"
+    },
+    {
+      "name": "lesson_id",
+      "type": "string",
+      "required": true,
+      "title": "Lesson ID"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "required": true,
+      "title": "Progress Status",
+      "enum": ["not_started", "in_progress", "completed"]
+    },
+    {
+      "name": "score",
+      "type": "number",
+      "required": false,
+      "title": "Score Percentage"
+    },
+    {
+      "name": "timeSpent",
+      "type": "number",
+      "required": false,
+      "title": "Time Spent (minutes)"
+    },
+    {
+      "name": "completedAt",
+      "type": "string",
+      "required": false,
+      "title": "datetime"
+    },
+    {
+      "name": "attempts",
+      "type": "number",
+      "required": true,
+      "title": "Number of Attempts"
+    },
+    {
+      "name": "creator",
+      "type": "string",
+      "required": true,
+      "title": "Creator ID"
+    },
+    {
+      "name": "createdAt",
+      "type": "string",
+      "required": true,
+      "title": "datetime"
+    },
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "required": true,
+      "title": "datetime"
+    }
+  ]
+}

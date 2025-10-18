@@ -1,0 +1,88 @@
+
+{
+  "name": "subscriptions",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "title": "Plan Name"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": true,
+      "title": "Description"
+    },
+    {
+      "name": "price",
+      "type": "number",
+      "required": true,
+      "title": "Price"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "required": true,
+      "title": "Duration (months)"
+    },
+    {
+      "name": "level",
+      "type": "string",
+      "required": true,
+      "title": "Subscription Level",
+      "enum": ["basic", "intermediate", "advanced", "premium"]
+    },
+    {
+      "name": "features",
+      "type": "array",
+      "required": true,
+      "title": "Features",
+      "items": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "maxLessons",
+      "type": "number",
+      "required": true,
+      "title": "Maximum Lessons"
+    },
+    {
+      "name": "hasVideo",
+      "type": "boolean",
+      "required": true,
+      "title": "Video Access"
+    },
+    {
+      "name": "hasSupport",
+      "type": "boolean",
+      "required": true,
+      "title": "Support Access"
+    },
+    {
+      "name": "popular",
+      "type": "boolean",
+      "required": false,
+      "title": "Popular Plan"
+    },
+    {
+      "name": "creator",
+      "type": "string",
+      "required": true,
+      "title": "Creator ID"
+    },
+    {
+      "name": "createdAt",
+      "type": "string",
+      "required": true,
+      "title": "datetime"
+    },
+    {
+      "name": "updatedAt",
+      "type": "string",
+      "required": true,
+      "title": "datetime"
+    }
+  ]
+}
