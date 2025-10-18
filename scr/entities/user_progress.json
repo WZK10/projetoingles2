@@ -1,0 +1,65 @@
+
+{
+  "name": "user_progress",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["user_id", "lesson_id", "status", "createdAt"],
+        "properties": {
+          "user_id": {
+            "bsonType": "string",
+            "description": "ID do usuário"
+          },
+          "lesson_id": {
+            "bsonType": "string",
+            "description": "ID da lição"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["not_started", "in_progress", "completed"],
+            "description": "Status da lição"
+          },
+          "score": {
+            "bsonType": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Pontuação obtida"
+          },
+          "timeSpent": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Tempo gasto em minutos"
+          },
+          "completedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de conclusão"
+          },
+          "attempts": {
+            "bsonType": "int",
+            "minimum": 1,
+            "description": "Número de tentativas"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador do registro"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

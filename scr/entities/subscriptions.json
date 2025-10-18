@@ -1,0 +1,78 @@
+
+{
+  "name": "subscriptions",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["name", "price", "duration", "features", "level", "createdAt"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "description": "Nome do plano de assinatura"
+          },
+          "description": {
+            "bsonType": "string",
+            "description": "Descrição detalhada do plano"
+          },
+          "price": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Preço do plano em reais"
+          },
+          "duration": {
+            "bsonType": "int",
+            "minimum": 1,
+            "description": "Duração em meses"
+          },
+          "level": {
+            "bsonType": "string",
+            "enum": ["basic", "intermediate", "advanced", "premium"],
+            "description": "Nível do curso"
+          },
+          "features": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Lista de recursos incluídos"
+          },
+          "maxLessons": {
+            "bsonType": "int",
+            "minimum": 1,
+            "description": "Número máximo de lições"
+          },
+          "hasVideo": {
+            "bsonType": "bool",
+            "description": "Inclui vídeo aulas"
+          },
+          "hasSupport": {
+            "bsonType": "bool",
+            "description": "Inclui suporte personalizado"
+          },
+          "popular": {
+            "bsonType": "bool",
+            "description": "Plano mais popular"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador do plano"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

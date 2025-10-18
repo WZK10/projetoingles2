@@ -1,0 +1,101 @@
+
+{
+  "name": "lessons",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["title", "level", "content", "duration", "createdAt"],
+        "properties": {
+          "title": {
+            "bsonType": "string",
+            "description": "Título da lição"
+          },
+          "description": {
+            "bsonType": "string",
+            "description": "Descrição da lição"
+          },
+          "level": {
+            "bsonType": "string",
+            "enum": ["beginner", "intermediate", "advanced"],
+            "description": "Nível de dificuldade"
+          },
+          "category": {
+            "bsonType": "string",
+            "enum": ["grammar", "vocabulary", "conversation", "listening", "reading", "writing"],
+            "description": "Categoria da lição"
+          },
+          "content": {
+            "bsonType": "object",
+            "properties": {
+              "text": {
+                "bsonType": "string",
+                "description": "Conteúdo textual da lição"
+              },
+              "audioUrl": {
+                "bsonType": "string",
+                "description": "URL do áudio"
+              },
+              "videoUrl": {
+                "bsonType": "string",
+                "description": "URL do vídeo"
+              }
+            },
+            "description": "Conteúdo da lição"
+          },
+          "exercises": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "question": {
+                  "bsonType": "string"
+                },
+                "options": {
+                  "bsonType": "array",
+                  "items": {
+                    "bsonType": "string"
+                  }
+                },
+                "correctAnswer": {
+                  "bsonType": "string"
+                },
+                "explanation": {
+                  "bsonType": "string"
+                }
+              }
+            },
+            "description": "Exercícios da lição"
+          },
+          "duration": {
+            "bsonType": "int",
+            "minimum": 1,
+            "description": "Duração em minutos"
+          },
+          "requiredSubscription": {
+            "bsonType": "string",
+            "enum": ["basic", "intermediate", "advanced", "premium"],
+            "description": "Nível de assinatura necessário"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador da lição"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

@@ -1,0 +1,62 @@
+
+{
+  "name": "user_subscriptions",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["user_id", "subscription_id", "startDate", "endDate", "status", "createdAt"],
+        "properties": {
+          "user_id": {
+            "bsonType": "string",
+            "description": "ID do usuário"
+          },
+          "subscription_id": {
+            "bsonType": "string",
+            "description": "ID do plano de assinatura"
+          },
+          "startDate": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de início da assinatura"
+          },
+          "endDate": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de fim da assinatura"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["active", "expired", "cancelled"],
+            "description": "Status da assinatura"
+          },
+          "paymentMethod": {
+            "bsonType": "string",
+            "description": "Método de pagamento utilizado"
+          },
+          "autoRenew": {
+            "bsonType": "bool",
+            "description": "Renovação automática"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador do registro"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
